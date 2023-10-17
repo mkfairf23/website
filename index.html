@@ -1,65 +1,78 @@
-<!doctype html>
-<html lang="en-US">
-<head>
-    <meta charset="utf-8" />
-
-    <title> Info Vis Test Page </title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
-
-</head>
-<body>
-
-    <div>
-        <h2> Welcome to MK's Test Page for Info Vis. </h2>
-
-        <p> Try entering some text and hitting enter. </p>
-        <input id="inputText" />
-
-        <button id="button"> Click Me </button>
-    </div>
-    
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>mbostock particles</title>
+    <title>PMA Energy Consumption Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
-  </head>
-  <body>
+
+    <style>
+        /* Add some general styling */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        iframe {
+            border: none; /* Removes any border around the iframes */
+            margin-bottom: 20px;
+            width: 100%; /* Ensures iframes take full width */
+        }
+
+        p {
+            color: #777;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Display the particles -->
     <div id="observablehq-canvas-18db4c30"></div>
     <p>Credit: <a href="https://observablehq.com/@mbostock/connected-particles-iii">Connected Particles III by Mike Bostock</a></p>
-  <h2>Total Monthly Energy Consumption</h2>
-    <iframe width="100%" height="426.015625" frameborder="0"
-  src="https://observablehq.com/embed/18b08c576010735f@1156?cells=monthlyEnergy"></iframe>
-    
-    
+
+    <!-- Monthly Energy Consumption -->
+    <h2>Total Monthly Energy Consumption</h2>
+    <iframe height="426.015625" src="https://observablehq.com/embed/18b08c576010735f@1156?cells=monthlyEnergy"></iframe>
+
+    <!-- Energy Usage by Building and Type -->
     <h2>Monthy Energy Usage by Building and Type</h2>
-    
-    <iframe width="100%" height="734.015625" frameborder="0"
-  src="https://observablehq.com/embed/18b08c576010735f@1158?cells=buildingAndType"></iframe>
+    <iframe height="734.015625" src="https://observablehq.com/embed/18b08c576010735f@1158?cells=buildingAndType"></iframe>
 
-<h2> Total Energy Usage by Building </h2>
-    <iframe width="100%" height="101" frameborder="0"
-  src="https://observablehq.com/embed/18b08c576010735f@1158?cells=viewof+buildingTotalEnergy"></iframe>
-    
-    <iframe width="100%" height="476" frameborder="0"
-  src="https://observablehq.com/embed/18b08c576010735f@1160?cells=totalEnergyVisual"></iframe>
-    
+    <!-- Total Energy Usage by Building -->
+    <h2>Total Energy Usage by Building</h2>
+    <iframe height="101" src="https://observablehq.com/embed/18b08c576010735f@1158?cells=viewof+buildingTotalEnergy"></iframe>
+    <iframe height="476" src="https://observablehq.com/embed/18b08c576010735f@1160?cells=totalEnergyVisual"></iframe>
+
+    <!-- Script for Observable Visualization -->
     <script type="module">
-    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-    import define from "https://api.observablehq.com/@mbostock/connected-particles-iii.js?v=4";
-    new Runtime().module(define, name => {
-      if (name === "canvas") return new Inspector(document.querySelector("#observablehq-canvas-18db4c30"));
-    });
-  </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-
-
-</body> 
+        import {
+            Runtime,
+            Inspector
+        } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/@mbostock/connected-particles-iii.js?v=4";
+        new Runtime().module(define, name => {
+            if (name === "canvas") return new Inspector(document.querySelector("#observablehq-canvas-18db4c30"));
+        });
+    </script>
+</body>
 
 </html>
-
