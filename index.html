@@ -45,8 +45,12 @@
             text-decoration: none;
         }
 
-        a:hover {
+        a: hover {
             text-decoration: underline;
+        }
+
+        .center {
+            text-align: center;
         }
     </style>
 </head>
@@ -56,15 +60,14 @@
     <h1>PMA Energy Consumption</h1>
 
     <!-- INTRO -->
-
-    <h3 text-align="center"> Portland Museum of Art Energy Usage Visualization </h3>
+<div class="center">
+    <h3 > Portland Museum of Art Energy Usage Visualization </h3>
     <h4>The data for the graphics in this dashboard comes from data generously provided by the Portland Museum of Art (PMA). </h4>
-   <h4> Our goal was to take that data and create a series of visualizations to communicate the state of energy usage at the museum. <h4>
+   <h4> Our goal was to take that data and create a series of visualizations to communicate the state of energy usage at the museum. </h4>
        <br>
     <h4>The following graphics give an overview of the energy consumption data for the various buildings of the Portland Museum of Art's (PMA) campus. </h4>
         <h4>The first two graphics show a general overview of the museum's energy usage, and those seeking a more in-depth analysis can look further into more exploratory visuals in the latter two graphics. </h4>
-
-
+</div>
     <!-- EXPLANATORY GRAPHICS -->
     <!-- Total Yearly Energy Usage by Building -->
 
@@ -100,7 +103,7 @@
   src="https://observablehq.com/embed/18b08c576010735f@1270?cells=viewof+typeTotalEnergy%2CmonthlyEnergy"></iframe>
        <br>
 
-       <p><i> Observable notebooks authored by Bridget Mohler, Mary Fairfield, Albert Wang, & Shawn Chapla. Data belongs to the Portland Museum of Art and is not publicly available. </i></p>
+       <p class="center"><i> Observable notebooks authored by Bridget Mohler, Mary Fairfield, Albert Wang, & Shawn Chapla. Data belongs to the Portland Museum of Art and is not publicly available. </i></p>
 </body>
 
 </html>
